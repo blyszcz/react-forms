@@ -10,4 +10,5 @@ export class ContactForm extends Component {
   }
 }
 
-export default ContactForm
+export default ContactForm;
+
