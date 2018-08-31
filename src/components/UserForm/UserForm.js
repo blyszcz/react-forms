@@ -61,11 +61,11 @@ const warn = values => {
   return warnings
 }
 
-ContactForm = reduxForm({
+const ContactFormRedux = reduxForm({
   form: 'contact',
   initialValues,
   validate,
   warn
 })(ContactForm)
 
-export default ContactForm;
+export default ContactFormRedux;

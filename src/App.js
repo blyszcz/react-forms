@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import rootReducer from './rootReducer';
-import ContactForm from './components/ContactForm/ContactForm';
-import './App.css';
+import UserForm from './components/ContactForm/ContactForm';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const store = createStore(rootReducer);
@@ -15,7 +14,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div className="App">
-          <ContactForm onSubmit={this.onSubmit}/>
+          <UserForm onSubmit={this.onSubmit}/>
         </div>
       </Provider>
     );
