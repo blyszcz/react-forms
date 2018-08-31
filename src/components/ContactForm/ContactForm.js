@@ -14,13 +14,13 @@ const TextInput = ({
   return (
     <div className="form-group">
       <label>{label}</label>
-      <input 
+      <input
         id={id}
-        className={`form-control ${error && 'is-invalid'}`} 
-        type={type} 
+        className={`form-control ${error && 'is-invalid'}`}
+        type={type}
         value={value}
         onChange={onChange}
-        {...props} 
+        {...props}
       />
       {error && <div className="invalid-feedback">{error}</div>}
     </div>
@@ -77,12 +77,39 @@ class ContactForm extends Component {
   }
 }
 
+const initialValues = {
+  firstName: 'Stolec',
+  secondName: 'Bolec',
+  age: 22
+}
+
+const validate = values => {
+  const errors = {}
+
+  if (!values.firstName) {
+    errors.firstName = 'First name is required'
+  } else if (values.firstName.length > 15) {
+    errors.firstName = 'Must be 15 characters or less'
+  }
+
+  if (!values.age) {
+    errors.age = 'Age is required'
+  } else if (isNaN(Number(values.age))) {
+    errors.age = 'Must be a number'
+  } else if (Number(values.age) < 18) {
+    errors.age = 'Sorry, you must be at least 18 years old'
+  }
+
+  return errors;
+}
+
 const formikEnhances = withFormik({
-  mapPropsToValues: () => ({ firstName: 'x', secondName: 'ds', age: '' }),
+  mapPropsToValues: () => (initialValues),
   handleSubmit: (payload, { setSubmitting }) => {
     console.log('submit');
     console.log(payload);
-  }
+  },
+  validate
 });
 
 export default formikEnhances(ContactForm);
