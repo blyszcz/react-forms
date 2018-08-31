@@ -77,7 +77,7 @@ class ContactForm extends Component {
 }
 
 const initialValues = {
-  firstName: 'Stolec',
+  firstName: 'Tomasz',
   secondName: 'Bolec',
   age: 22
 }
@@ -107,7 +107,7 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 const validateAsync = (values) => {
   return sleep(2000).then(() => {
     let errors = {};
-    if (['Mateusz', 'Stolec', 'Bolec'].includes(values.secondName)) {
+    if (['Mateusz', 'Dawid', 'Michał'].includes(values.firstName)) {
       errors.secondName = 'Nice try';
     }
 
