@@ -28,7 +28,7 @@ const TextInput = ({
   );
 }
 
-class ContactForm extends Component {
+class UserForm extends Component {
   render() {
     const {
       values,
@@ -112,4 +112,4 @@ const formikEnhances = withFormik({
   validate: validateAsync
 });
 
-export default formikEnhances(ContactForm);
+export default formikEnhances(UserForm);
