@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-export class UserForm extends Component {
+class UserForm extends Component {
   render() {
     return (
       <div>
-        <h1>Simple form</h1>
+        <h1>User form</h1>
       </div>
     )
   }

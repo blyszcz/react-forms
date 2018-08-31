@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { UserForm } from './components/UserForm/UserForm';
+import UserForm from './components/UserForm/UserForm';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
