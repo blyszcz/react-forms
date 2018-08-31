@@ -108,7 +108,7 @@ const validateAsync = (values) => {
   return sleep(2000).then(() => {
     let errors = {};
     if (['Mateusz', 'Dawid', 'Michał'].includes(values.firstName)) {
-      errors.secondName = 'Nice try';
+      errors.firstName = 'Nice try';
     }
 
     if (Object.keys(errors).length) {
