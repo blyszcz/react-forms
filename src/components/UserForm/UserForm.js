@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
-import submit, { validateAsync } from './validateAsync';
+import { validateAsync } from './validateAsync';
 
 
 const renderInput = ({ input, type, label, meta: { touched, error, warning }}) => {
