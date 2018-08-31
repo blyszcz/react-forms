@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withFormik } from 'formik';
+import { validateAsync } from './validateAsync';
 
 const TextInput = ({
   type,
@@ -101,21 +102,6 @@ const validate = values => {
 
   return errors;
 }
-
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-
-const validateAsync = (values) => {
-  return sleep(2000).then(() => {
-    let errors = {};
-    if (['Mateusz', 'Dawid', 'Michał'].includes(values.firstName)) {
-      errors.firstName = 'Nice try';
-    }
-
-    if (Object.keys(errors).length) {
-      throw errors;
-    }
-  });
-};
 
 const formikEnhances = withFormik({
   mapPropsToValues: () => (initialValues),
