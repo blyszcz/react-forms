@@ -69,8 +69,8 @@ class ContactForm extends Component {
           onChange={handleChange}
           onBlur={handleBlur}
         />
-        <button type="submit" disabled={isSubmitting}>
-          Submit
+        <button className="btn btn-primary" type="submit" disabled={isSubmitting}>
+          Confirm
         </button>
       </form>
     )
