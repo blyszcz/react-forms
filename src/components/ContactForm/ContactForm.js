@@ -29,7 +29,6 @@ const TextInput = ({
 
 class ContactForm extends Component {
   render() {
-    console.log(this.props);
     const {
       values,
       touched,
@@ -105,9 +104,19 @@ const validate = values => {
 
 const formikEnhances = withFormik({
   mapPropsToValues: () => (initialValues),
-  handleSubmit: (payload, { setSubmitting }) => {
+  handleSubmit: (values, { setSubmitting }) => {
     console.log('submit');
-    console.log(payload);
+    console.log(values);
+    // LoginToMyApp(values).then(
+    //   user => {
+    //     setSubmitting(false);
+    //     // props.updateUser(user)
+    //   },
+    //   errors => {
+    //     setSubmitting(false);
+    //     setErrors(transformMyApiErrors(errors));
+    //   }
+    // );
   },
   validate
 });
