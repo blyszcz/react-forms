@@ -2,8 +2,8 @@ import { SubmissionError } from 'redux-form';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
-function submit(values) {
-  return sleep(2000).then(() => {
+export const validateAsync = (values) =>
+  sleep(2000).then(() => {
     // simulate server latency
     if (['Mateusz', 'Dawid', 'Michał'].includes(values.firstName)) {
       throw new SubmissionError({
@@ -13,7 +13,4 @@ function submit(values) {
     } else {
       console.log(values);
     }
-  })
-}
-
-export default submit;
+  });
