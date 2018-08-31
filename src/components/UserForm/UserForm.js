@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
-export class ContactForm extends Component {
+export class UserForm extends Component {
   render() {
     return (
       <div>
-        <h1>ContactForm</h1>
+        <h1>Simple form</h1>
       </div>
     )
   }
 }
 
-export default ContactForm
+export default UserForm;
