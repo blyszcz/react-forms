@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import rootReducer from './rootReducer';
-import UserForm from './components/ContactForm/ContactForm';
+import UserForm from './components/UserForm/UserForm';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const store = createStore(rootReducer);
