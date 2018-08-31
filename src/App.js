@@ -8,10 +8,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const store = createStore(rootReducer);
 
-store.subscribe(() => {
-  console.log(store.getState());
-});
-
 class App extends Component {
   onSubmit = values => console.log(values);
 

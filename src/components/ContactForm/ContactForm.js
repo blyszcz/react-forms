@@ -17,7 +17,6 @@ export class ContactForm extends Component {
   render() {
     return (
       <form onSubmit={this.props.handleSubmit} className="container needs-validation">
-        {/* <Field name="firstName" component="input" type="text" placeholder="Type first name..."/> */}
         <Field name="firstName" component={renderInput} type="text" label="First name"/>
         <Field name="secondName" component={renderInput} type="text" label="Second name"/>
         <Field name="age" component={renderInput} type="number" label="Age" />
@@ -28,9 +27,9 @@ export class ContactForm extends Component {
 }
 
 const initialValues = {
-  // firstName: 'Stolec',
-  // secondName: 'Bolec',
-  // age: 22
+  firstName: 'Stolec',
+  secondName: 'Bolec',
+  age: 22
 }
 
 const validate = values => {
@@ -62,7 +61,6 @@ const warn = values => {
 }
 
 ContactForm = reduxForm({
-  // a unique name for the form
   form: 'contact',
   initialValues,
   validate,
