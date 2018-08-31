@@ -27,7 +27,7 @@ export class ContactForm extends Component {
 }
 
 const initialValues = {
-  firstName: 'Stolec',
+  firstName: 'Tomasz',
   secondName: 'Bolec',
   age: 22
 }
