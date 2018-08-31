@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
+import submit from './submit';
 
 
 const renderInput = ({ input, type, label, meta: { touched, error, warning }}) => {
@@ -16,7 +17,7 @@ const renderInput = ({ input, type, label, meta: { touched, error, warning }}) =
 export class ContactForm extends Component {
   render() {
     return (
-      <form onSubmit={this.props.handleSubmit} className="container needs-validation">
+      <form onSubmit={this.props.handleSubmit(submit)} className="container needs-validation">
         <Field name="firstName" component={renderInput} type="text" label="First name"/>
         <Field name="secondName" component={renderInput} type="text" label="Second name"/>
         <Field name="age" component={renderInput} type="number" label="Age" />

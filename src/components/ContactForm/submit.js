@@ -7,7 +7,7 @@ function submit(values) {
     // simulate server latency
     if (['Mateusz', 'Dawid', 'Michał'].includes(values.firstName)) {
       throw new SubmissionError({
-        secondName: 'No way!',
+        firstName: 'No way!',
         _error: 'No way!'
       })
     } else {
