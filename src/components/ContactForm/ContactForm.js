@@ -102,23 +102,28 @@ const validate = values => {
   return errors;
 }
 
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+const validateAsync = (values) => {
+  return sleep(2000).then(() => {
+    let errors = {};
+    if (['Mateusz', 'Stolec', 'Bolec'].includes(values.secondName)) {
+      errors.secondName = 'Nice try';
+    }
+
+    if (Object.keys(errors).length) {
+      throw errors;
+    }
+  });
+};
+
 const formikEnhances = withFormik({
   mapPropsToValues: () => (initialValues),
   handleSubmit: (values, { setSubmitting }) => {
-    console.log('submit');
     console.log(values);
-    // LoginToMyApp(values).then(
-    //   user => {
-    //     setSubmitting(false);
-    //     // props.updateUser(user)
-    //   },
-    //   errors => {
-    //     setSubmitting(false);
-    //     setErrors(transformMyApiErrors(errors));
-    //   }
-    // );
+    setSubmitting(false);
   },
-  validate
+  validate: validateAsync
 });
 
 export default formikEnhances(ContactForm);
