@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Form, Field } from 'react-final-form';
 
 const onSubmit = values => {
-  console.log('leci submit!');
+  console.log('Submit!');
   console.log(values);
 }
 
@@ -26,6 +26,10 @@ const validate = values => {
   return errors;
 }
 
+const initialValues = {
+  firstName: 'Dawid',
+}
+
 const TextInput = ({ label, input, meta: { error, touched } }) => (
   <div className="form-group">
       <label>{label}</label>
@@ -36,10 +40,6 @@ const TextInput = ({ label, input, meta: { error, touched } }) => (
       {error && touched && <div className="invalid-feedback">{error}</div>}
     </div>
 );
-
-const initialValues = {
-  firstName: 'Dawid',
-}
 
 class UserForm extends Component {
   render() {
