@@ -105,11 +105,18 @@ const validate = values => {
 
 const formikEnhances = withFormik({
   mapPropsToValues: () => (initialValues),
-  handleSubmit: (values, { setSubmitting }) => {
-    console.log(values);
-    setSubmitting(false);
+  handleSubmit: (values, { setSubmitting, setErrors }) => {
+    validateAsync(values)
+      .then(() => {
+        console.log('Submit!')
+        setSubmitting(false);
+      })
+      .catch(errors => {
+        setSubmitting(false);
+        setErrors(errors);
+      });
   },
-  validate: validateAsync
+  validate
 });
 
 export default formikEnhances(UserForm);
