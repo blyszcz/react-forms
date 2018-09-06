@@ -1,9 +1,9 @@
 # React forms
 
 The same form build in :
-- redux-form <small>branch: redux-form</small>
-- formik <small>branch: formik</small>
-- react final form <small>branch: react-final-form</small>
+- redux-form (_branch: redux-form_)
+- formik (_branch: formik_)
+- react final form (_branch: react-final-form_)
 
 ## Run
 To run type:
