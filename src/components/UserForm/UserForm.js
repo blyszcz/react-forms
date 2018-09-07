@@ -14,18 +14,14 @@ const renderInput = ({ input, type, label, meta: { touched, error, warning }}) =
   )
 }
 
-export class UserForm extends PureComponent {
-  render() {
-    return (
-      <form onSubmit={this.props.handleSubmit(validateAsync)} className="container needs-validation">
-        <Field name="firstName" component={renderInput} type="text" label="First name"/>
-        <Field name="secondName" component={renderInput} type="text" label="Second name"/>
-        <Field name="age" component={renderInput} type="number" label="Age" />
-        <button type="submit" className="btn btn-primary">Confirm</button>
-      </form>
-    )
-  }
-}
+const UserForm = ({ handleSubmit }) => (
+  <form onSubmit={handleSubmit(validateAsync)} className="container needs-validation">
+    <Field name="firstName" component={renderInput} type="text" label="First name"/>
+    <Field name="secondName" component={renderInput} type="text" label="Second name"/>
+    <Field name="age" component={renderInput} type="number" label="Age" />
+    <button type="submit" className="btn btn-primary">Confirm</button>
+  </form>
+);
 
 const initialValues = {
   firstName: 'Tomasz',
