@@ -14,7 +14,7 @@ const renderInput = ({ input, type, label, meta: { touched, error, warning }}) =
   )
 }
 
-export class ContactForm extends Component {
+export class UserForm extends Component {
   render() {
     return (
       <form onSubmit={this.props.handleSubmit(validateAsync)} className="container needs-validation">
@@ -61,11 +61,11 @@ const warn = values => {
   return warnings
 }
 
-const ContactFormRedux = reduxForm({
+const UserFormRedux = reduxForm({
   form: 'contact',
   initialValues,
   validate,
   warn
-})(ContactForm)
+})(UserForm);
 
-export default ContactFormRedux;
+export default UserFormRedux;
