@@ -41,42 +41,38 @@ const TextInput = ({ label, input, meta: { error, touched } }) => (
     </div>
 );
 
-class UserForm extends Component {
-  render() {
-    return (
-      <Form
-        onSubmit={onSubmit}
-        validate={validate}
-        initialValues={initialValues}
-        render={({ handleSubmit, submitting }) => (
-          <form onSubmit={handleSubmit} className="container need-validations">
-            <Field
-              name="firstName"
-              component={TextInput}
-              type="text"
-              label="First Name"
-            />
-            <Field
-              name="secondName"
-              component={TextInput}
-              type="text"
-              label="Second Name"
-            />
-            <Field
-              name="age"
-              component={TextInput}
-              type="number"
-              label="Age"
-            />
-            <button className="btn btn-primary" type="submit" disabled={submitting}>
-              Confirm
-            </button>
-          </form>
-        )}
-        >
-      </Form>
-    )
-  }
-}
+const UserForm = () => (
+  <Form
+    onSubmit={onSubmit}
+    validate={validate}
+    initialValues={initialValues}
+    render={({ handleSubmit, submitting }) => (
+      <form onSubmit={handleSubmit} className="container need-validations">
+        <Field
+          name="firstName"
+          component={TextInput}
+          type="text"
+          label="First Name"
+        />
+        <Field
+          name="secondName"
+          component={TextInput}
+          type="text"
+          label="Second Name"
+        />
+        <Field
+          name="age"
+          component={TextInput}
+          type="number"
+          label="Age"
+        />
+        <button className="btn btn-primary" type="submit" disabled={submitting}>
+          Confirm
+        </button>
+      </form>
+    )}
+    >
+  </Form>
+);
 
 export default UserForm;
