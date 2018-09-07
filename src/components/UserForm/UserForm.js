@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { validateAsync } from './validateAsync';
 
@@ -14,7 +14,7 @@ const renderInput = ({ input, type, label, meta: { touched, error, warning }}) =
   )
 }
 
-export class UserForm extends Component {
+export class UserForm extends PureComponent {
   render() {
     return (
       <form onSubmit={this.props.handleSubmit(validateAsync)} className="container needs-validation">
