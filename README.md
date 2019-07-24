@@ -11,5 +11,4 @@ To run type:
 `git checkout <branch-name>`
 
 `npm i && npm start`
-
-![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/blyszcz/react-forms)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/blyszcz/react-forms)
